@@ -8,7 +8,10 @@ def multiply(x, y):
     return x * y
 
 def divide(x, y):
-    return x / y
+    if y <= 0:
+        print("You can't divide by Zero please...")
+    elif y > 0:
+        return x / y
 
 print("Simple Calculator")
 print("1. Add")
@@ -23,13 +26,14 @@ num2 = float(input("Enter second number: "))
 
 if choice == "1":
     result = add(num1, num2)
-    print("Result: " + result)
+    print("Result: " + str(result))
 elif choice == "2":
     result = subtract(num1, num2)
-    print("Result: " + result)
+    print("Result: " + str(result))
 elif choice == "3":
     result = multiply(num1, num2)
-    print("Result: " + result)
+    print("Result: " + str(result))
 elif choice == "4":
     result = divide(num1, num2)
-    print("Result: " + result)
+    print("Result: " + str(result))
+
