@@ -23,8 +23,19 @@ print("4. Divide")
 
 choice = input("Select operation (1/2/3/4): ")
 
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
+# make sure the numbers are int or floats
+try:
+    num1 = float(input("Enter first number: "))
+except ValueError:
+    print("Error: Please enter valid number")
+    exit()
+
+try:
+    num2 = float(input("Enter second number: "))
+except ValueError:
+    print("Error: Please enter valid number")
+    exit()
+
 
 if choice == "1":
     result = add(num1, num2)
