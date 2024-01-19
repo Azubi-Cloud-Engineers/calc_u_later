@@ -8,7 +8,12 @@ def multiply(x, y):
     return x * y
 
 def divide(x, y):
-    return x / y
+    # handle division by zero
+    # print a nice statement 
+    if y == 0:
+        return "You can not divide by zero"
+    else:
+        return x / y
 
 print("Simple Calculator")
 print("1. Add")
@@ -18,18 +23,33 @@ print("4. Divide")
 
 choice = input("Select operation (1/2/3/4): ")
 
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
+# make sure the numbers are int or floats
+flag = True
+while flag:  # infinite loop
+    try:
+        num1 = float(input("Enter first number: "))
+        flag = False
+    except ValueError:
+        print("Error: Please enter valid number")
+
+flag = True
+while flag:  # infinite loop
+    try:
+        num2 = float(input("Enter second number: "))
+        flag = False
+    except ValueError:
+        print("Error: Please enter valid number")
+
 
 if choice == "1":
     result = add(num1, num2)
-    print("Result: " + result)
+    print("Result: " + str(result))  # type cast result to string
 elif choice == "2":
     result = subtract(num1, num2)
-    print("Result: " + result)
+    print("Result: " + str(result))  # type cast result to string
 elif choice == "3":
     result = multiply(num1, num2)
-    print("Result: " + result)
+    print("Result: " + str(result))  # type cast result to string
 elif choice == "4":
     result = divide(num1, num2)
-    print("Result: " + result)
+    print("Result: " + str(result))  # type cast result to string
